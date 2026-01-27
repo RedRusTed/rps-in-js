@@ -27,7 +27,7 @@ function getUserChoice(){
     return userChoice
 }
 
-while (humanScore < 3 && computerScore < 3){
+function playRound(){
    let user = getUserChoice()
    let pc = getComputerChoice()
    
@@ -48,11 +48,6 @@ while (humanScore < 3 && computerScore < 3){
    }
 }
 
-if (humanScore == 3){
-    alert("You WIN!")
-}else if (computerScore == 3){
-    alert("U LOOSE!")
-}
 
-console.log("Pc: "+computerScore)
-console.log("User: "+humanScore)
+
+
