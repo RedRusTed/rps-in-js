@@ -5,10 +5,61 @@ html{
     flex-direction: column;
     height: 100vh;
 
-    background-color: aliceblue;
+    background-color: rgb(17, 103, 179);
+}
+
+img{
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+button{
+    padding: 0px;
+    border: 0px;
+    height: 200px;
+    border-radius: 20px;
 }
 body{
     width: 700px;
     height: 700px;
-    background-color: bisque;
+    background-color: #ffff ;
+
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.score{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.images{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 80px;
+}
+#button{
+    height: 100px;
+    width: 200px;
+
+    font-size: 48px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif  ;
+    background-color:rgb(17, 103, 179) ;
+    color: #ffff;
 }
