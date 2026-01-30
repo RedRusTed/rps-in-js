@@ -27,7 +27,7 @@ buttonPaper.addEventListener("click", () => {handleUserClick("paper")})
 buttonScissors.addEventListener("click", () => {handleUserClick("scissors")})
 
 function handleUserClick(value){
-    if (humanScore != 5 && pcScore != 5){
+    if (humanScore != 5 && computerScore != 5){
         oneRoundPlay(value)
     }else{
         showWinner(humanScore,computerScore)
