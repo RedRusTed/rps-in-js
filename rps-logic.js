@@ -1,6 +1,7 @@
 let humanScore = 0
 let computerScore = 0
-const buttonStart = document.querySelector("#button-start")
+
+const evaluation = document.querySelector("#win-loss")
 const buttonReset = document.querySelector("#button-reset")
 const buttonRock = document.querySelector("#rock")
 const buttonPaper = document.querySelector("#paper")
@@ -26,9 +27,29 @@ buttonPaper.addEventListener("click", () => {getUserChoice("paper")})
 buttonScissors.addEventListener("click", () => {getUserChoice("scissors")})
 
 function getUserChoice(value){
-    console.log("User: " + value)
+    oneRoundPlay(value)
 }
 
-buttonStart.addEventListener('click', () =>{
-    console.log(getComputerChoice())
-})
+
+function oneRoundPlay(userValue){
+    let pcValue = getComputerChoice()
+
+    console.log(userValue)
+    console.log(pcValue)
+    if (userValue === pcValue){
+        evaluation.textContent = "DRAW!"
+    }else if(userValue === "rock" && pcValue === "scissors"){
+        humanScore++
+        evaluation.textContent = "You win a round!"
+    }else if(userValue === "paper" && pcValue === "rock"){
+        humanScore++
+        evaluation.textContent = "You win a round!"
+    
+    }else if(userValue === "scissors" && pcValue === "paper"){
+        humanScore++
+        evaluation.textContent = "You win a round!"
+    }else{
+        computerScore++
+        evaluation.textContent = "You loose a round!"
+    }
+}
