@@ -22,12 +22,16 @@ function getComputerChoice(){
     }
 }
 
-buttonRock.addEventListener("click", () => {getUserChoice("rock")})
-buttonPaper.addEventListener("click", () => {getUserChoice("paper")})
-buttonScissors.addEventListener("click", () => {getUserChoice("scissors")})
+buttonRock.addEventListener("click", () => {handleUserClick("rock")})
+buttonPaper.addEventListener("click", () => {handleUserClick("paper")})
+buttonScissors.addEventListener("click", () => {handleUserClick("scissors")})
 
-function getUserChoice(value){
-    oneRoundPlay(value)
+function handleUserClick(value){
+    if (humanScore != 5 && pcScore != 5){
+        oneRoundPlay(value)
+    }else{
+        showWinner(humanScore,computerScore)
+    }
 }
 
 
@@ -52,4 +56,31 @@ function oneRoundPlay(userValue){
         computerScore++
         evaluation.textContent = "You loose a round!"
     }
+
+    updateScore(userValue)
+    showWinner()
 }
+
+function updateScore(userValue){
+    playerScore.textContent = humanScore
+    pcScore.textContent = computerScore
+}
+
+function showWinner(){
+    if (humanScore === 5 && computerScore < 5){
+        evaluation.textContent = "YOU ALREADY WON!!!!"
+        evaluation.style.color = "green"
+    }else if (computerScore === 5 && humanScore < 5){
+        evaluation.textContent = "YOU ALREADY LOST!!!!"
+        evaluation.style.color = "red"
+    }
+}
+
+buttonReset.addEventListener("click", () => {
+    humanScore = 0
+    computerScore = 0
+    playerScore.textContent = 0
+    computerScore.textContent = 0
+    evaluation.textContent = ""
+    evaluation.style.color = "black"
+})
