@@ -79,8 +79,8 @@ function showWinner(){
 buttonReset.addEventListener("click", () => {
     humanScore = 0
     computerScore = 0
+    pcScore.textContent = 0
     playerScore.textContent = 0
-    computerScore.textContent = 0
     evaluation.textContent = ""
     evaluation.style.color = "black"
 })
