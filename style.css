@@ -40,6 +40,11 @@ body{
     align-items: center;
 }
 
+.score-text{
+    font-size: 38px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .images{
     display: flex;
     justify-content: space-around;
@@ -54,7 +59,7 @@ body{
 
     gap: 80px;
 }
-#button{
+.button{
     height: 100px;
     width: 200px;
 
